@@ -7,10 +7,10 @@ from matplotlib.patches import Polygon
 from scipy.spatial import Voronoi, KDTree
 
 # Constants
-GRID_SIZE = 200
-NUM_TAXIS = 10
-NUM_CUSTOMERS = 3
-SEED = 67
+GRID_SIZE = 10
+NUM_TAXIS = 18
+NUM_CUSTOMERS = 6
+SEED = 55
 
 # Data Generation
 np.random.seed(SEED)
@@ -129,10 +129,10 @@ fig, ax = plt.subplots(figsize=(10, 10))
 
 # --- Layer 1: Background Map ---
 try:
-    map_img = plt.imread('novi_sad_map.png')
+    map_img = plt.imread('subotica_map.png')
     ax.imshow(map_img, extent=[0, GRID_SIZE, 0, GRID_SIZE], alpha=0.8)
 except FileNotFoundError:
-    print("Upozorenje: 'novi_sad_map.png' nije pronađen. Koristim belu pozadinu.")
+    print("Upozorenje: 'subotica_map.png' nije pronađen. Koristim belu pozadinu.")
 
 # --- Layer 2: Voronoi Regions (Solid & Clipped) ---
 colors = plt.get_cmap('tab20').colors
